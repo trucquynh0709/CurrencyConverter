@@ -1,9 +1,9 @@
 function convertCurrency(amount, from, to) {
   const rates = {
     USD: 1,
-    VND: 26283,
-    EUR: 1.17193429,
-    AUD: 0.71988728,
+    VND: 26337,
+    EUR: 0.85345370,
+    AUD: 1.38954087,
   };
 
   if (typeof amount !== "number" || isNaN(amount)) {
