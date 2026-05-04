@@ -1,9 +1,9 @@
 function convertCurrency(amount, from, to) {
   const rates = {
     USD: 1,
-    VND: 25000,
-    EUR: 1.08,
-    AUD: 0.66,
+    VND: 26283,
+    EUR: 1.17193429,
+    AUD: 0.71988728,
   };
 
   if (typeof amount !== "number" || isNaN(amount)) {
@@ -27,17 +27,8 @@ function convertCurrency(amount, from, to) {
   }
 
   return (amount / rates[from]) * rates[to];
-
-  
 }
-console.log(convertCurrency(100, "USD", "VND")); 
-// expect ~2500000
 
-console.log(convertCurrency(2500000, "VND", "USD")); 
-// expect ~100
+console.log(convertCurrency(100, "VND", "USD"));
 
-console.log(convertCurrency(-100, "USD", "USD")); 
-// expect 100
 
-console.log(convertCurrency(100, "ABC", "USD")); 
-// expect "Invalid currency"
