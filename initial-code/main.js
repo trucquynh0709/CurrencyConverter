@@ -29,6 +29,32 @@ function convertCurrency(amount, from, to) {
   return (amount / rates[from]) * rates[to];
 }
 
-console.log(convertCurrency(100, "VND", "USD"));
+// Event listener for Convert button
+document.addEventListener("DOMContentLoaded", function() {
+  const convertButton = document.getElementById("convert-button");
+  const amount1 = document.getElementById("amount-1");
+  const currency1 = document.getElementById("currency-1");
+  const amount2 = document.getElementById("amount-2");
+  const currency2 = document.getElementById("currency-2");
+
+  convertButton.addEventListener("click", function() {
+    const inputAmount = parseFloat(amount1.value);
+    const fromCurrency = currency1.value;
+    const toCurrency = currency2.value;
+
+    if (!amount1.value) {
+      alert("Please enter an amount");
+      return;
+    }
+
+    const result = convertCurrency(inputAmount, fromCurrency, toCurrency);
+    
+    if (typeof result === "string") {
+      alert(result);
+    } else {
+      amount2.value = result.toFixed(2);
+    }
+  });
+});
 
 
