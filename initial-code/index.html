@@ -2,44 +2,86 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Currency Converter - WeCamp</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Currency Converter - WeCamp</title>
 </head>
 
 <body>
-    <h1>Currency Converter</h1>
-    <div class="converter-card">
-        <div class="converter-inputs">
-            <div class="input-group">
-                <label for="amount-1">Amount</label>
-                <input type="number" id="amount-1" class="amount-input" placeholder="E.g. 100">
-                <label for="currency-1">Currency</label>
-                <select id="currency-1" class="currency-select" title="From currency">
-                    <option value="VND">VND</option>
-                    <option value="AUD">AUD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="amount-2">Amount</label>
-                <input type="number" id="amount-2" class="amount-input" placeholder="E.g. 100">
-                <label for="currency-2">Currency</label>
-                <select id="currency-2" class="currency-select" title="To currency">
-                    <option value="VND">VND</option>
-                    <option value="AUD">AUD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                </select>
-            </div>
+
+  <h1>Currency Converter</h1>
+
+  <div class="converter-card">
+
+    <!-- Inputs -->
+    <div class="converter-inputs">
+
+      <div class="input-group">
+        <label for="amount-1">From</label>
+        <div>
+          <input type="number" id="amount-1" class="amount-input" placeholder="0" value="1">
+          <div class="select-wrap">
+            <select id="currency-1" class="currency-select">
+              <option value="USD">USD</option>
+              <option value="VND">VND</option>
+              <option value="AUD">AUD</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
         </div>
-        <div class="converter-actions">
-            <button id="convert-button" class="btn-convert" type="button">Convert</button>
+      </div>
+
+      <button id="swap-btn" class="btn-swap" type="button">⇄</button>
+
+      <div class="input-group">
+        <label for="amount-2">To</label>
+        <div>
+          <input type="number" id="amount-2" class="amount-input" placeholder="Result" readonly>
+          <div class="select-wrap">
+            <select id="currency-2" class="currency-select">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
+              <option value="AUD">AUD</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
         </div>
+      </div>
+
     </div>
-    <script src="main.js"></script>
+
+    <!-- Result strip -->
+    <div class="converter-result">
+      <p class="result-placeholder" id="result-placeholder">Enter an amount and press Convert</p>
+      <div class="result-main" id="result-main">
+        <div class="result-eq" id="result-eq"></div>
+        <div class="result-rate" id="result-rate"></div>
+      </div>
+    </div>
+
+    <!-- Convert button -->
+    <div class="converter-actions">
+      <button id="convert-button" class="btn-convert" type="button">Convert</button>
+    </div>
+
+    <!-- History -->
+    <div class="converter-history">
+      <div class="history-header">
+        <span class="history-title">History</span>
+        <button id="clear-btn" class="btn-clear" type="button">Clear all</button>
+      </div>
+      <p class="history-empty" id="history-empty">No conversions yet</p>
+      <div class="history-list" id="history-list"></div>
+    </div>
+
+    <!-- Footer note -->
+    <div class="converter-note">Rates are indicative only · Mid-market rate</div>
+
+  </div>
+
+  <script src="main.js"></script>
+
 </body>
 
 </html>
