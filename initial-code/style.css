@@ -1,3 +1,127 @@
-/* Styles for the currency converter layout */
+/*
+  Currency Converter Styles
+  
+  This stylesheet defines the look and feel for the currency converter
+  mini‑project. The design is inspired by modern currency tools like
+  XE but adopts the red and black brand colours of the National
+  Australia Bank. It introduces a centred card with clear form
+  controls, responsive two–column layout for larger screens and
+  accessible focus states. Feel free to adjust spacing and colours
+  further to suit your needs.
+*/
 
-/* Add layout, form, button, and display styling here */
+/* Use border-box sizing for consistent layouts */
+* {
+  box-sizing: border-box;
+}
+
+/* Base styles for the page */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+h1 {
+  color: #ed0000; /* National Australia Bank red */
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* Card container for the converter */
+.converter-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Groups the two sets of inputs */
+.converter-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* On larger screens place groups side by side */
+@media (min-width: 500px) {
+  .converter-inputs {
+    flex-direction: row;
+  }
+}
+
+/* Individual input group styling */
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Text inputs and selects share similar styling */
+.amount-input,
+.currency-select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Focus state for inputs and selects */
+.amount-input:focus,
+.currency-select:focus {
+  border-color: #ed0000;
+  box-shadow: 0 0 3px rgba(237, 0, 0, 0.5);
+}
+
+/* Actions section for button */
+.converter-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Convert button */
+.btn-convert {
+  background-color: #ed0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state for the button */
+.btn-convert:hover {
+  background-color: #c20000;
+}
+
+/* Disabled state for the button */
+.btn-convert:disabled {
+  background-color: #dddddd;
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+/* Optional utility class for error messages */
+.error-message {
+  color: #ed0000;
+  font-size: 14px;
+  margin-top: 8px;
+}
