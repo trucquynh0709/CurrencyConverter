@@ -6,6 +6,22 @@ function convertCurrency(amount, from, to) {
     AUD: 0.71988728,
   };
 
+  if (typeof amount !== "number" || isNaN(amount)) {
+    return "Invalid amount";
+  }
+
+  if (amount < 0) {
+    return "Amount cannot be negative";
+  }
+
+  if (amount > 1e12) {
+    return "Amount too large";
+  }
+
+  if (!(from in rates) || !(to in rates)) {
+    return "Invalid currency";
+  }
+
   if (!rates[from] || !rates[to]) {
     return "Invalid currency";
   }
