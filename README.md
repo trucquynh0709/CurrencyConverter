@@ -17,6 +17,15 @@ Một mini project xây dựng ứng dụng **chuyển đổi tiền tệ** gi�
 - Tư duy tách file theo cấu trúc dự án cơ bản
 
 ---
+# Thành viên nhóm:
+
+- Nguyễn Ngọc Trúc Quỳnh
+- Dương Thanh Ngọc
+- Phạm Thanh Bảo Ngân
+- Lương Thanh Trúc
+- Lưu Thuý Anh
+
+---
 
 ## Mục tiêu dự án
 
