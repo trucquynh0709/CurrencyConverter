@@ -1,3 +1,4 @@
+
 function convertCurrency(amount, from, to) {
   const rates = {
     USD: 1,
