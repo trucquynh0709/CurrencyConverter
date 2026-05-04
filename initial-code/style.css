@@ -1,16 +1,4 @@
-/*
-  Currency Converter Styles
-  
-  This stylesheet defines the look and feel for the currency converter
-  mini‑project. The design is inspired by modern currency tools like
-  XE but adopts the red and black brand colours of the National
-  Australia Bank. It introduces a centred card with clear form
-  controls, responsive two–column layout for larger screens and
-  accessible focus states. Feel free to adjust spacing and colours
-  further to suit your needs.
-*/
 
-/* Use border-box sizing for consistent layouts */
 * {
   box-sizing: border-box;
 }
